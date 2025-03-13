@@ -1,6 +1,5 @@
 var builder = WebApplication.CreateBuilder(args);
 
-//Test
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
