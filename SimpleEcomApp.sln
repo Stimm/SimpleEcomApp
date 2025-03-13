@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.35825.156 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleEcom", "SimpleEcom\SimpleEcom.csproj", "{34B08D79-9FC4-43B7-B9A8-CCD1D266A275}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleEcomTest", "SimpleEcomTest\SimpleEcomTest.csproj", "{94CDE224-E96B-4099-89E2-9F94FC6F6D77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{34B08D79-9FC4-43B7-B9A8-CCD1D266A275}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34B08D79-9FC4-43B7-B9A8-CCD1D266A275}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34B08D79-9FC4-43B7-B9A8-CCD1D266A275}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94CDE224-E96B-4099-89E2-9F94FC6F6D77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94CDE224-E96B-4099-89E2-9F94FC6F6D77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94CDE224-E96B-4099-89E2-9F94FC6F6D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94CDE224-E96B-4099-89E2-9F94FC6F6D77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
