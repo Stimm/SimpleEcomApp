@@ -1,0 +1,6 @@
+@SimpleEcom_HostAddress = http://localhost:5014
+
+GET {{SimpleEcom_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
