@@ -16,6 +16,13 @@ jobs:
             MODE: "dev"
 
         steps: 
+        - name: Run Super-Linter
+          uses: github/super-linter@v4
+          env:
+            DEFAULT_BRANCH: main
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
         - uses: actions/checkout@v4
         - name: Setup dotnet
           uses: actions/setup-dotnet@v4
