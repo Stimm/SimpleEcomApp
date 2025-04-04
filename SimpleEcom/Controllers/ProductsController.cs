@@ -1,37 +1,36 @@
 ﻿namespace SimpleEcom.Controllers;
 using Microsoft.AspNetCore.Mvc;
-using Amazon.DynamoDBv2.DocumentModel;
 using System.Threading.Tasks;
-using SimpleEcom.Utilities;
+using Amazon.DynamoDBv2.DataModel;
+using SimpleEcom.DataModels;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class ProductsController : ControllerBase
 {
-    private readonly DynamoDBService _dynamoDbService;
+    private readonly IDynamoDBContext _context;
 
-    public ProductsController(DynamoDBService dynamoDbService)
+    public ProductsController(IDynamoDBContext context)
     {
-        _dynamoDbService = dynamoDbService;
+        _context = context;
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetProduct(string id)
     {
-        var product = await _dynamoDbService.GetItemAsync(id);
+        var product = await _context.LoadAsync<Product>(id);
         if (product == null)
         {
             return NotFound();
         }
-        return Ok(product.ToJson());
+        return Ok(product);
     }
 
-    [HttpPost]
-    public async Task<IActionResult> PostItem([FromBody] dynamic data)
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
     {
-        var document = Document.FromJson(data.ToString());
-        await _dynamoDbService.PutItemAsync(document);
-        return CreatedAtAction(nameof(GetProduct), new { id = document["Id"].AsString() }, document.ToJson());
+        var products = await _context.ScanAsync<Product>(default).GetRemainingAsync();
+        return Ok(products);
     }
 
     // Add other endpoints (e.g., PUT, DELETE)
